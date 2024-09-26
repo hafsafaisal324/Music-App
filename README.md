@@ -1,77 +1,87 @@
-# Spotify Clone App
+<p align="center">
+<kbd>
+  <img style="width:100px; height:100px; border-radius:20%;" class="rounded-image" src="./assets/icon.png" alt="logo" height="150"/></kbd>
+</p>
 
-- [Description](#description)
-- [Structure](#structure)
-- [Setup](#setup)
+<h2 align="center">
+    SoulTribeNetwork
+</h2>
 
-## Description
-This project is a clone of the popular music streaming application, Spotify. It has been developed using React Native, and the [Spotify API](https://developer.spotify.com/documentation/web-api) for music data. As of now, please note that the project is exclusively supported for Android devices.  
+<p align="center">
 
-<br>
+</p>
 
-| LoginScreen | HomeScreen | ExploreScreen | LibraryScreen |
-|:---------------:|:---------------:|:---------------:|:---------------:|
-| ![LoginScreen](assets/screenshots/LoginScreen.png) | ![HomeScreen](assets/screenshots/HomeScreen.png) | ![SearchScreen](assets/screenshots/ExploreScreen.png) | ![YourLibraryScreen](assets/screenshots/LibraryScreen.png)
-| ArtistScreen | AlbumScreen | PlaylistScreen | PodcastScreen |  
-![ArtistScreen](assets/screenshots/ArtistScreen.png) | ![AlbumScreen](assets/screenshots/AlbumScreen.png) | ![PlaylistScreen](assets/screenshots/PlaylistScreen.png) | ![PodcastScreen](assets/screenshots/PodcastScreen.png)
+<div align="center">
 
-## Structure
+![Platform - iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
+![Platform - iOS](https://img.shields.io/badge/platform-andriod-red.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/YajanaRao/Serenity/pulls)
 
-Inside the directory we can find the different functionalities developed for the correct functioning of the project. The structure of the project can be summarized as follows:
+</div>
 
-1. `Components` #Contains all the source code and style files for the custom components.
-2. `Navigation` #This Navigation directory is responsible for handling the navigation logic of the application. It defines the routes, screens, and navigation stacks.
-3. `Screens` #This directory consists of all the individual screens or views of the application. Each screen represents a specific user interface (UI) that the user can interact with. 
-4. `Services` #Contains code responsible for connecting with Spotify APIs.
-5. `Utils` #Contains helper functions that are used across different parts of the application.
-6. `Assets` #The Assets directory is used to store static files, such as images, fonts, or other resources required by the project.
-7. `Hooks` #This directory contain custom hooks that are used across the application.
-8. `Context` #The Context directory holds the context providers and related code for managing the global state of the application, allowing data to be shared and accessed across different components and screens.
+[![Music PLayer](https://github.com/gionathas/music-player/assets/16454253/909c51e2-03f1-4fc8-94e6-56745f67fed8)](https://youtu.be/9CElrkFwiBU?si=PFgwCFDulxJJD2f4)
 
-## Setup
+## What is this ?
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) till "Creating a new application" step, before proceeding.
+SoulTribeNetwork is a versatile, serverless track player that enables users to effortlessly stream music, meditation tracks, and podcasts from an extensive variety of sources, both local and remote.
 
-## Step 1: Install dependencies
+## Pre-alpha release
 
-First of all, make sure you are inside the source main directory.
+SoulTribeNetwork is currently under early access stage. While some features are operational, others may not be fully functional yet. We encourage you to explore and use the app. If you encounter any issues or find certain aspects counterintuitive, please report them. Your feedback is invaluable and will help prioritize future developments.
+
+## Features
+
+- [x] Listen to audio from local storage
+- [x] Listen to audio from webdav server
+- [x] Built-in metadata scraping, including artist, album, photos, and more.
+- [x] Build-in lyrics
+- [x] Create playlists and play audio from saved playlists
+- [x] Manage audio queue
+- [x] Searching songs from added library
+- [x] Airplay support
+- [ ] Voice searching songs from added library
+- [ ] Karaoke mode
+- [ ] Metadata editing
+- [ ] Custom metadata api
+- [ ] Custom lyrics api
+- [ ] Listen to audio from synology audio station
+- [ ] Listen to audio from Jellyin
+- [ ] Listen to audio from Plex
+- [ ] Listen to audio from Emby
+- [ ] And more...
+
+## Quick Start
+
 ```bash
-cd mobile
-```
-
-Now, you can install the project dependencies using your favourite package manager:
-
-```bash
-# using npm
-npm install
-
-# OR using Yarn
 yarn install
 ```
 
-## Step 2: Start the Metro Server
-
-To start Metro, run the following command from the _root_ of your React Native project:
+### Run IOS
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+npx expo run:ios
 ```
 
-## Step 3: Start the Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ app:
+### Run Andriod
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+npx expo run:andriod
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ shortly provided you have set up your emulator/simulator correctly.
-# soul-tribe-network
+## Contribution
+
+SoulTribeNetwork welcomes contributions, but to avoid overlapping work, please create an issue or leave a comment to discuss your plans before you begin.
+
+## Our Community
+
+You can join [Discord Channel](https://discord.gg/CSqbu3TT)
+
+## Become a tester
+
+### Android
+
+Not ready to release
+
+### iOS
+
+Distribute via TestFlight. Please leave your Apple email address in the Discord channel or contact me at zqian15@asu.edu to receive a redeem code.
