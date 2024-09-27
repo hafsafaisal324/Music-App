@@ -1,87 +1,79 @@
-<p align="center">
-<kbd>
-  <img style="width:100px; height:100px; border-radius:20%;" class="rounded-image" src="./assets/icon.png" alt="logo" height="150"/></kbd>
-</p>
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-<h2 align="center">
-    SoulTribeNetwork
-</h2>
+# Getting Started
 
-<p align="center">
+>**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-</p>
+## Step 1: Start the Metro Server
 
-<div align="center">
+First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
-![Platform - iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
-![Platform - iOS](https://img.shields.io/badge/platform-andriod-red.svg)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/YajanaRao/Serenity/pulls)
-
-</div>
-
-[![Music PLayer](https://github.com/gionathas/music-player/assets/16454253/909c51e2-03f1-4fc8-94e6-56745f67fed8)](https://youtu.be/9CElrkFwiBU?si=PFgwCFDulxJJD2f4)
-
-## What is this ?
-
-SoulTribeNetwork is a versatile, serverless track player that enables users to effortlessly stream music, meditation tracks, and podcasts from an extensive variety of sources, both local and remote.
-
-## Pre-alpha release
-
-SoulTribeNetwork is currently under early access stage. While some features are operational, others may not be fully functional yet. We encourage you to explore and use the app. If you encounter any issues or find certain aspects counterintuitive, please report them. Your feedback is invaluable and will help prioritize future developments.
-
-## Features
-
-- [x] Listen to audio from local storage
-- [x] Listen to audio from webdav server
-- [x] Built-in metadata scraping, including artist, album, photos, and more.
-- [x] Build-in lyrics
-- [x] Create playlists and play audio from saved playlists
-- [x] Manage audio queue
-- [x] Searching songs from added library
-- [x] Airplay support
-- [ ] Voice searching songs from added library
-- [ ] Karaoke mode
-- [ ] Metadata editing
-- [ ] Custom metadata api
-- [ ] Custom lyrics api
-- [ ] Listen to audio from synology audio station
-- [ ] Listen to audio from Jellyin
-- [ ] Listen to audio from Plex
-- [ ] Listen to audio from Emby
-- [ ] And more...
-
-## Quick Start
+To start Metro, run the following command from the _root_ of your React Native project:
 
 ```bash
-yarn install
+# using npm
+npm start
+
+# OR using Yarn
+yarn start
 ```
 
-### Run IOS
+## Step 2: Start your Application
+
+Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+
+### For Android
 
 ```bash
-npx expo run:ios
+# using npm
+npm run android
+
+# OR using Yarn
+yarn android
 ```
 
-### Run Andriod
+### For iOS
 
 ```bash
-npx expo run:andriod
+# using npm
+npm run ios
+
+# OR using Yarn
+yarn ios
 ```
 
-## Contribution
+If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
-SoulTribeNetwork welcomes contributions, but to avoid overlapping work, please create an issue or leave a comment to discuss your plans before you begin.
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Our Community
+## Step 3: Modifying your App
 
-You can join [Discord Channel](https://discord.gg/CSqbu3TT)
+Now that you have successfully run the app, let's modify it.
 
-## Become a tester
+1. Open `App.tsx` in your text editor of choice and edit some lines.
+2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
 
-### Android
+   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-Not ready to release
+## Congratulations! :tada:
 
-### iOS
+You've successfully run and modified your React Native App. :partying_face:
 
-Distribute via TestFlight. Please leave your Apple email address in the Discord channel or contact me at zqian15@asu.edu to receive a redeem code.
+### Now what?
+
+- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
+- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+
+# Troubleshooting
+
+If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+
+# Learn More
+
+To learn more about React Native, take a look at the following resources:
+
+- [React Native Website](https://reactnative.dev) - learn more about React Native.
+- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
+- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
+- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
+- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

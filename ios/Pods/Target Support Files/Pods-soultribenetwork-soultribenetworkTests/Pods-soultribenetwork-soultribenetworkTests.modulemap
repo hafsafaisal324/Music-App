@@ -1,0 +1,6 @@
+module Pods_soultribenetwork_soultribenetworkTests {
+  umbrella header "Pods-soultribenetwork-soultribenetworkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
