@@ -1,13 +1,14 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, FlatList } from 'react-native';
+import React from "react";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import ConditionalImage from '../../ConditionalImage';
+import ConditionalImage from "../../ConditionalImage";
 
-import { handleNavigation } from '../../../utils/helpers';
-import styles from './styles';
+import { handleNavigation } from "../../../utils/helpers";
+import styles from "./styles";
 
 const HorizontalCarousel = ({ items, title }) => {
+  console.log("Item=========>", items);
   const navigation = useNavigation();
   return (
     <View style={styles.carouseView}>
@@ -17,11 +18,19 @@ const HorizontalCarousel = ({ items, title }) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.imageView} onPress={() => handleNavigation(item, navigation)}>
-            <ConditionalImage image={item.images[0]?.url} size={40} style={styles.image} />
+          <TouchableOpacity
+            style={styles.imageView}
+            onPress={() => handleNavigation(item, navigation)}
+          >
+            <ConditionalImage
+              image={item.images[0]?.url}
+              size={40}
+              style={styles.image}
+            />
             <Text style={styles.descriptionText}>{item.name}</Text>
           </TouchableOpacity>
-        )} />
+        )}
+      />
     </View>
   );
 };
