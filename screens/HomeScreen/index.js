@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { carouselStrings } from "../../utils/strings";
 import { usePlaylist } from "../../hooks/usePlaylist";
@@ -21,19 +21,21 @@ const HomeScreen = () => {
   const { featuredAlbums } = useAlbum().featured();
   return (
     <ScrollView style={styles.background}>
-      <ScreenHeader title={message} icon={"notifications-outline"} />
-      <HomeGrid items={recentlyPlayed} />
-      <View style={styles.carouselView}>
-        <HorizontalCarousel
-          items={featuredPlaylists}
-          title={carouselStrings.featuredPlaylists}
-        />
-        <HorizontalCarousel
-          items={featuredAlbums}
-          title={carouselStrings.featuredAlbums}
-        />
-      </View>
-      <BottomPadding />
+      <SafeAreaView>
+        <ScreenHeader title={message} icon={"notifications-outline"} />
+        <HomeGrid items={recentlyPlayed} />
+        <View style={styles.carouselView}>
+          <HorizontalCarousel
+            items={featuredPlaylists}
+            title={carouselStrings.featuredPlaylists}
+          />
+          <HorizontalCarousel
+            items={featuredAlbums}
+            title={carouselStrings.featuredAlbums}
+          />
+        </View>
+        <BottomPadding />
+      </SafeAreaView>
     </ScrollView>
   );
 };
