@@ -13,12 +13,16 @@ import HomeGrid from "../../components/Grids/HomeGrid";
 import HorizontalCarousel from "../../components/HorizontalCarousels/HorizontalCarousel";
 
 import styles from "./styles";
+import useTheme from "../../hooks/useTheme";
+import style from "./styles";
 
 const HomeScreen = () => {
   const { message } = useMessage();
   const { featuredPlaylists } = usePlaylist().featured();
   const { recentlyPlayed } = useRecentlyPlayed();
   const { featuredAlbums } = useAlbum().featured();
+  const { colors } = useTheme();
+  const styles = style(colors);
   return (
     <ScrollView style={styles.background}>
       <SafeAreaView>

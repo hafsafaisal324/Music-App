@@ -10,6 +10,8 @@ import { PlayerProvider } from "./context/player";
 import { LoginStackNavigation } from "./navigation/LoginStackNavigation";
 import { BottomTabNavigation } from "./navigation/BottomTabNavigation";
 import SplashScreen from "./screens/SplashScreen";
+import { store } from "./store";
+import { Provider } from "react-redux";
 
 export default function App() {
   const { setupPlayer } = usePlayer();
@@ -22,13 +24,15 @@ export default function App() {
 
   return (
     <ModalProvider>
-      <QueryClientProvider client={queryClient}>
-        <NavigationContainer>
-          <PlayerProvider>
-            <BottomTabNavigation />
-          </PlayerProvider>
-        </NavigationContainer>
-      </QueryClientProvider>
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          <NavigationContainer>
+            <PlayerProvider>
+              <BottomTabNavigation />
+            </PlayerProvider>
+          </NavigationContainer>
+        </QueryClientProvider>
+      </Provider>
     </ModalProvider>
   );
 }
