@@ -8,7 +8,6 @@ import { handleNavigation } from "../../../utils/helpers";
 import styles from "./styles";
 
 const HorizontalCarousel = ({ items, title }) => {
-  console.log("Item=========>", items);
   const navigation = useNavigation();
   return (
     <View style={styles.carouseView}>
