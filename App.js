@@ -28,7 +28,13 @@ export default function App() {
         <QueryClientProvider client={queryClient}>
           <NavigationContainer>
             <PlayerProvider>
-              <BottomTabNavigation />
+              {token === null ? (
+                <SplashScreen />
+              ) : token.length > 0 ? (
+                <BottomTabNavigation />
+              ) : (
+                <LoginStackNavigation />
+              )}
             </PlayerProvider>
           </NavigationContainer>
         </QueryClientProvider>

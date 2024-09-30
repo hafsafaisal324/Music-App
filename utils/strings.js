@@ -1,10 +1,10 @@
 /************************************
-*********** SCREEN STRINGS **********
-*************************************/
+ *********** SCREEN STRINGS **********
+ *************************************/
 export const loginStrings = {
   loginString1: "Millions of Songs. \n",
   loginString2: "Free on Spotify.",
-  signInWithSpotify: "Sign in with Spotify",
+  signInWithSpotify: "Continue with Apple",
   signInWithPhoneNumber: "Continue with phone number",
   signInWithGoogle: "Continue with Google",
   signInWithFacebook: "Continue with Facebook",
@@ -44,14 +44,14 @@ export const artistStrings = {
 export const playlistStrings = {
   recommendedSongs: "Recommended songs",
   playlistInfluence: "Suggested from your list",
-  nameInfluence: "Based in the name of this list"
-}
+  nameInfluence: "Based in the name of this list",
+};
 
 /************************************
-********* COMPONENT STRINGS *********
-*************************************/
+ ********* COMPONENT STRINGS *********
+ *************************************/
 export const searchBarStrings = {
-  artistsSongsOrPodcasts: "Search for music, playlists, podcasts..."
+  artistsSongsOrPodcasts: "Search for music, playlists, podcasts...",
 };
 
 export const carouselStrings = {
@@ -64,15 +64,16 @@ export const carouselStrings = {
 };
 
 export const modalStrings = {
-  undeDevelopment: 'Oops! It seems that this feature is under development. You will be able to enjoy it soon. 🚀',
-  ok: 'OK 👌',
+  undeDevelopment:
+    "Oops! It seems that this feature is under development. You will be able to enjoy it soon. 🚀",
+  ok: "OK 👌",
 };
 
 export const categorySelectorStrings = {
-  playlist: ["Playlists", 'playlist'], //[text label, content type]
-  show: ["Podcasts & Programs", 'show'],
-  album: ["Albums", 'album'],
-  artist: ["Artists", 'artist'],
+  playlist: ["Playlists", "playlist"], //[text label, content type]
+  show: ["Podcasts & Programs", "show"],
+  album: ["Albums", "album"],
+  artist: ["Artists", "artist"],
 };
 
 export const fallbackStrings = {
@@ -80,7 +81,7 @@ export const fallbackStrings = {
   emptyPlaylist: "Let's get started creating your playlist",
 
   tryAgain: "Try again",
-  add: "Add to your playlist"
+  add: "Add to your playlist",
 };
 
 export const followButtonStrings = {
@@ -89,12 +90,12 @@ export const followButtonStrings = {
 };
 
 /************************************
-********** GENERIC STRINGS **********
-*************************************/
+ ********** GENERIC STRINGS **********
+ *************************************/
 export const contentType = {
-  playlist: 'playlist',
-  album: 'album',
-  podcast: 'show',
-  artist: 'artist',
-  track: 'track',
+  playlist: "playlist",
+  album: "album",
+  podcast: "show",
+  artist: "artist",
+  track: "track",
 };

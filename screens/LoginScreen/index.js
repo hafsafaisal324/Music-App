@@ -23,20 +23,20 @@ import { ModalContext } from "../../context/modal";
  */
 const onLogin = async (navigation) => {
   try {
-    const result = await authorize(spotifyAuthConfig);
-    if (result.accessToken) {
-      console.log("token: " + result.accessToken);
-      const expirationDate = new Date(
-        result.accessTokenExpirationDate
-      ).getTime();
-      await AsyncStorage.setItem("spotifyToken", result.accessToken);
-      await AsyncStorage.setItem("refreshToken", result.refreshToken);
-      await AsyncStorage.setItem(
-        "tokenExpirationDate",
-        expirationDate.toString()
-      );
-      navigation.navigate("HomeStack");
-    }
+    // const result = await authorize(spotifyAuthConfig);
+    // if (result.accessToken) {
+    //   console.log("token: " + result.accessToken);
+    //   const expirationDate = new Date(
+    //     result.accessTokenExpirationDate
+    //   ).getTime();
+    //   await AsyncStorage.setItem("spotifyToken", result.accessToken);
+    //   await AsyncStorage.setItem("refreshToken", result.refreshToken);
+    //   await AsyncStorage.setItem(
+    //     "tokenExpirationDate",
+    //     expirationDate.toString()
+    //   );
+    navigation.navigate("HomeStack");
+    // }
   } catch (error) {
     console.log(JSON.stringify(error));
   }
