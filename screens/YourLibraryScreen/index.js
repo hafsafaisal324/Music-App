@@ -42,7 +42,7 @@ const YourLibraryScreen = () => {
   const [category, setCategory] = useState(null);
   const { searchText, setSearchText } = useSearchText("");
   const { isLoading, isError, data, refetch } = useLibraryContent();
-  console.log("Data=ddd========>");
+
   return (
     <ScrollView style={styles.background}>
       <ScreenHeader title={libraryStrings.library} icon={"add"} />
