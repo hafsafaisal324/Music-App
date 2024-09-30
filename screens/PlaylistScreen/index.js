@@ -30,40 +30,38 @@ const PlaylistScreen = () => {
 
   return (
     <ScrollView onScroll={fetchNextItems} style={styles.background}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <PlaylistHeader playlist={param} />
-        {playlist?.length === 0 || isLoading || isError ? (
-          <View style={styles.fallbackView}>
-            {playlist?.length === 0 && (
-              <FallbackCard
-                text={fallbackStrings.emptyPlaylist}
-                buttonText={fallbackStrings.add}
-                onPress={() => openModal()}
-              />
-            )}
-            {isLoading && <ActivityIndicator color={colors.spotifyGreen} />}
-            {isError && !isLoading && (
-              <FallbackCard
-                text={fallbackStrings.error}
-                buttonText={fallbackStrings.tryAgain}
-                onPress={refetch}
-              />
-            )}
-          </View>
-        ) : (
-          <View style={styles.songsView}>
-            {playlist.map((item, index) => {
-              const playlist = {
-                ...item.track,
-                pos: index,
-                image: item.track.album.images[0].url,
-              };
-              return <ImageSongCard key={index} item={playlist} />;
-            })}
-          </View>
-        )}
-        <BottomPadding />
-      </SafeAreaView>
+      <PlaylistHeader playlist={param} />
+      {playlist?.length === 0 || isLoading || isError ? (
+        <View style={styles.fallbackView}>
+          {playlist?.length === 0 && (
+            <FallbackCard
+              text={fallbackStrings.emptyPlaylist}
+              buttonText={fallbackStrings.add}
+              onPress={() => openModal()}
+            />
+          )}
+          {isLoading && <ActivityIndicator color={colors.spotifyGreen} />}
+          {isError && !isLoading && (
+            <FallbackCard
+              text={fallbackStrings.error}
+              buttonText={fallbackStrings.tryAgain}
+              onPress={refetch}
+            />
+          )}
+        </View>
+      ) : (
+        <View style={styles.songsView}>
+          {playlist.map((item, index) => {
+            const playlist = {
+              ...item.track,
+              pos: index,
+              image: item.track.album.images[0].url,
+            };
+            return <ImageSongCard key={index} item={playlist} />;
+          })}
+        </View>
+      )}
+      <BottomPadding />
     </ScrollView>
   );
 };

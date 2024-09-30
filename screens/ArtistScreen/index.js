@@ -29,43 +29,41 @@ const ArtistScreen = () => {
     useArtist().albums(param.id);
   return (
     <ScrollView style={styles.background}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <ArtistHeader artist={param} />
-        <View style={styles.contentView}>
-          {isLoadingAlbum ||
-          isLoadingRelated ||
-          isErrorAlbum ||
-          isErrorRelated ? (
-            <View style={styles.fallbackView}>
-              {(isLoadingAlbum || isLoadingRelated) && (
-                <ActivityIndicator color={colors.spotifyGreen} />
-              )}
-              {(isErrorAlbum || isErrorRelated) && (
-                <FallbackCard
-                  text={fallbackStrings.error}
-                  buttonText={fallbackStrings.tryAgain}
-                  onPress={refetchRelated && refetchAlbums}
-                />
-              )}
-            </View>
-          ) : (
-            <View style={styles.popularSongsView}>
-              <Text style={styles.popularSongsTitle}>
-                {artistStrings.popularSongs}
-              </Text>
-              {albums.slice(0, 3).map((item) => {
-                const album = { ...item, label: getYear(item.release_date) };
-                return <ContentCard key={item.id} item={album} />;
-              })}
-              <Text style={styles.relatedArtistTitle}>
-                {artistStrings.relatedArtists}
-              </Text>
-              <ArtistsCarousel artists={related.slice(0, 5)} />
-            </View>
-          )}
-          <BottomPadding />
-        </View>
-      </SafeAreaView>
+      <ArtistHeader artist={param} />
+      <View style={styles.contentView}>
+        {isLoadingAlbum ||
+        isLoadingRelated ||
+        isErrorAlbum ||
+        isErrorRelated ? (
+          <View style={styles.fallbackView}>
+            {(isLoadingAlbum || isLoadingRelated) && (
+              <ActivityIndicator color={colors.spotifyGreen} />
+            )}
+            {(isErrorAlbum || isErrorRelated) && (
+              <FallbackCard
+                text={fallbackStrings.error}
+                buttonText={fallbackStrings.tryAgain}
+                onPress={refetchRelated && refetchAlbums}
+              />
+            )}
+          </View>
+        ) : (
+          <View style={styles.popularSongsView}>
+            <Text style={styles.popularSongsTitle}>
+              {artistStrings.popularSongs}
+            </Text>
+            {albums.slice(0, 3).map((item) => {
+              const album = { ...item, label: getYear(item.release_date) };
+              return <ContentCard key={item.id} item={album} />;
+            })}
+            <Text style={styles.relatedArtistTitle}>
+              {artistStrings.relatedArtists}
+            </Text>
+            <ArtistsCarousel artists={related.slice(0, 5)} />
+          </View>
+        )}
+        <BottomPadding />
+      </View>
     </ScrollView>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import { SafeAreaView } from "react-native";
 import { usePlayer } from "./hooks/usePlayer";
 import { useToken } from "./hooks/useToken";
 import { ModalProvider } from "./context/modal";
@@ -26,17 +26,19 @@ export default function App() {
     <ModalProvider>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
-          <NavigationContainer>
-            <PlayerProvider>
-              {token === null ? (
-                <SplashScreen />
-              ) : token.length > 0 ? (
-                <BottomTabNavigation />
-              ) : (
-                <LoginStackNavigation />
-              )}
-            </PlayerProvider>
-          </NavigationContainer>
+          <SafeAreaView style={{ flex: 1 }} dges={["top", "left", "right"]}>
+            <NavigationContainer>
+              <PlayerProvider>
+                {token === null ? (
+                  <SplashScreen />
+                ) : token.length > 0 ? (
+                  <BottomTabNavigation />
+                ) : (
+                  <LoginStackNavigation />
+                )}
+              </PlayerProvider>
+            </NavigationContainer>
+          </SafeAreaView>
         </QueryClientProvider>
       </Provider>
     </ModalProvider>

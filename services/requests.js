@@ -5124,11 +5124,13 @@ export const getFeaturedAlbums = async () => {
  */
 export const getRecentlyPlayed = async () => {
   const accessToken = await AsyncStorage.getItem("spotifyToken");
-  // const response = await axios({
-  //   method: "GET",
-  //   url: `https://api.spotify.com/v1/me/player/recently-played?limit=6`,
-  //   headers: { Authorization: `Bearer ${accessToken}` },
-  // });
+  const response = await axios({
+    method: "GET",
+    url: `https://api.spotify.com/v1/me/player/recently-played?limit=6`,
+    headers: {
+      Authorization: `Bearer ${"BQAdbMy4Dhj0VCfnFS_VcEgjmMHBb9Sekjcal5F8T9HaXb7zIJjtsIRgjuzp4x3SGvAXgBw1NWdURSGGGHP5wPSU0Baqc9Zz4b5AvPGOX6aZy6w5c15GktTT_bvB-3wA3rfOqjYsrAGuzHuqxz0simNcYiQNiIyuhw"}`,
+    },
+  });
   let data = {
     href: "https://api.spotify.com/v1/me/player/recently-played",
     limit: 20,
@@ -13182,6 +13184,7 @@ export const getUserInfo = async () => {
 };
 
 export const requestItem = async (request) => {
+  console.log("Request==============>", request);
   const accessToken = await AsyncStorage.getItem("spotifyToken");
   const response = await axios({
     method: "GET",

@@ -25,21 +25,19 @@ const HomeScreen = () => {
   const styles = style(colors);
   return (
     <ScrollView style={styles.background}>
-      <SafeAreaView>
-        <ScreenHeader title={message} icon={"notifications-outline"} />
-        <HomeGrid items={recentlyPlayed} />
-        <View style={styles.carouselView}>
-          <HorizontalCarousel
-            items={featuredPlaylists}
-            title={carouselStrings.featuredPlaylists}
-          />
-          <HorizontalCarousel
-            items={featuredAlbums}
-            title={carouselStrings.featuredAlbums}
-          />
-        </View>
-        <BottomPadding />
-      </SafeAreaView>
+      <ScreenHeader title={message} icon={"notifications-outline"} />
+      <HomeGrid items={recentlyPlayed} />
+      <View style={styles.carouselView}>
+        <HorizontalCarousel
+          items={featuredPlaylists}
+          title={carouselStrings.featuredPlaylists}
+        />
+        <HorizontalCarousel
+          items={featuredAlbums}
+          title={carouselStrings.featuredAlbums}
+        />
+      </View>
+      <BottomPadding />
     </ScrollView>
   );
 };

@@ -24,29 +24,27 @@ const AlbumScreen = () => {
 
   return (
     <ScrollView style={styles.background}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <AlbumHeader album={param} />
-        {isLoading || isError ? (
-          <View style={styles.fallbackView}>
-            {isLoading && <ActivityIndicator color={colors.spotifyGreen} />}
-            {isError && !isLoading && (
-              <FallbackCard
-                text={fallbackStrings.error}
-                buttonText={fallbackStrings.tryAgain}
-                onPress={refetch}
-              />
-            )}
-          </View>
-        ) : (
-          <View style={styles.songsView}>
-            {data.tracks.items.map((item) => {
-              const album = { ...item, image: param.images[0].url };
-              return <StandardSongCard key={item.id} item={album} />;
-            })}
-          </View>
-        )}
-        <BottomPadding />
-      </SafeAreaView>
+      <AlbumHeader album={param} />
+      {isLoading || isError ? (
+        <View style={styles.fallbackView}>
+          {isLoading && <ActivityIndicator color={colors.spotifyGreen} />}
+          {isError && !isLoading && (
+            <FallbackCard
+              text={fallbackStrings.error}
+              buttonText={fallbackStrings.tryAgain}
+              onPress={refetch}
+            />
+          )}
+        </View>
+      ) : (
+        <View style={styles.songsView}>
+          {data.tracks.items.map((item) => {
+            const album = { ...item, image: param.images[0].url };
+            return <StandardSongCard key={item.id} item={album} />;
+          })}
+        </View>
+      )}
+      <BottomPadding />
     </ScrollView>
   );
 };

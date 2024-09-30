@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { ScrollView, View, ActivityIndicator } from "react-native";
+import {
+  ScrollView,
+  View,
+  ActivityIndicator,
+  SafeAreaView,
+} from "react-native";
 
 import { libraryStrings, categorySelectorStrings } from "../../utils/strings";
 import styles from "./styles";
@@ -29,7 +34,7 @@ const filterData = (data, category, searchText) => {
     ?.filter((item) =>
       item.name.toLowerCase().includes(searchText.toLowerCase())
     );
-  console.log("fdsknfdsknfdsknfdksnfkdsnfkdnsfkndsnfkdsnfkdsn");
+
   // Filter items based on category
   const categoryFiltered = category
     ? textFiltered.filter((item) => item.type === category)
