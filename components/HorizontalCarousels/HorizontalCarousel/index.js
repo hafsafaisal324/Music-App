@@ -25,6 +25,7 @@ const HorizontalCarousel = ({ items, title }) => {
               image={item.images[0]?.url}
               size={40}
               style={styles.image}
+              right={true}
             />
             <Text style={styles.descriptionText}>{item.name}</Text>
           </TouchableOpacity>
