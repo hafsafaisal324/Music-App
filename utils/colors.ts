@@ -2,6 +2,7 @@ const colors = {
   primary: "#125cfa",
   secondary: "#447efb",
   appBackground: "#ffffff",
+  appBackgroundTwo: "#E4EDFF",
   episodeCardBackground: "#0447d4",
   bottomTabBackground: "#e6e6e6",
   spotifyWhite: "#191414",

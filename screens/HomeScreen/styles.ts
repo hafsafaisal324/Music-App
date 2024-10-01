@@ -12,7 +12,7 @@ const style = <T extends Partial<ColorType>>(colors: T) =>
     background: {
       flex: 1,
       paddingHorizontal: 10,
-      backgroundColor: colors.appBackground,
+      backgroundColor: colors.appBackgroundTwo,
     },
     /**
      * View style for the carousel view.

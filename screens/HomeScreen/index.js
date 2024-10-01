@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 
 import { carouselStrings } from "../../utils/strings";
@@ -15,17 +15,29 @@ import HorizontalCarousel from "../../components/HorizontalCarousels/HorizontalC
 import styles from "./styles";
 import useTheme from "../../hooks/useTheme";
 import style from "./styles";
-
+import { useSearchText } from "../../hooks/useSearchText";
+import SearchBar from "../../components/SearchBar";
+import CategorySelector from "../../components/CategorySelector";
+import { libraryStrings, categorySelectorStrings } from "../../utils/strings";
 const HomeScreen = () => {
   const { message } = useMessage();
   const { featuredPlaylists } = usePlaylist().featured();
   const { recentlyPlayed } = useRecentlyPlayed();
   const { featuredAlbums } = useAlbum().featured();
+  const { searchText, setSearchText } = useSearchText("");
+  const [category, setCategory] = useState(null);
   const { colors } = useTheme();
   const styles = style(colors);
   return (
     <ScrollView style={styles.background}>
       <ScreenHeader title={message} icon={"notifications-outline"} />
+
+      <SearchBar valueText={searchText} changeText={setSearchText} />
+      <CategorySelector
+        categories={categorySelectorStrings}
+        selected={category}
+        setSelected={setCategory}
+      />
       <HomeGrid items={recentlyPlayed} />
       <View style={styles.carouselView}>
         <HorizontalCarousel
@@ -35,6 +47,10 @@ const HomeScreen = () => {
         <HorizontalCarousel
           items={featuredAlbums}
           title={carouselStrings.featuredAlbums}
+        />
+        <HorizontalCarousel
+          items={featuredAlbums}
+          title={carouselStrings.myPlaylists}
         />
       </View>
       <BottomPadding />

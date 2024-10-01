@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import colors from '../../utils/colors';
+import { StyleSheet } from "react-native";
+import colors from "../../utils/colors";
 
 const styles = StyleSheet.create({
   /**
@@ -8,11 +8,11 @@ const styles = StyleSheet.create({
    * - flex: 1 (flexible size to fit available space)
    * - paddingHorizontal: 10 (horizontal padding of 10 units)
    * - backgroundColor: colors.appBackground (background color using the 'appBackground' color from the 'colors' object)
-  */
+   */
   background: {
     flex: 1,
     paddingHorizontal: 10,
-    backgroundColor: colors.appBackground,
+    backgroundColor: colors.appBackgroundTwo,
   },
 });
 

@@ -59,8 +59,9 @@ export const carouselStrings = {
   yourPlaylists: "Your playlists",
   yourPodcasts: "Your podcasts",
   relatedArtists: "Related artists",
-  featuredPlaylists: "Stay up to date",
-  featuredAlbums: "Album discoveries",
+  featuredPlaylists: "Featured Collections",
+  featuredAlbums: "Categories",
+  myPlaylists: "My Play Lists",
 };
 
 export const modalStrings = {
