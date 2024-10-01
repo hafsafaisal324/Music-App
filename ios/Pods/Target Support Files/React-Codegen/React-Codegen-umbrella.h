@@ -35,6 +35,8 @@
 #import "reactnativemmkvJSI.h"
 #import "rnasyncstorage/rnasyncstorage.h"
 #import "rnasyncstorageJSI.h"
+#import "rnclipboard/rnclipboard.h"
+#import "rnclipboardJSI.h"
 #import "rngesturehandler_codegen/rngesturehandler_codegen.h"
 #import "rngesturehandler_codegenJSI.h"
 #import "rnreanimated/rnreanimated.h"

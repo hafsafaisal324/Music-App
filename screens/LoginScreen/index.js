@@ -35,7 +35,7 @@ const onLogin = async (navigation) => {
     //     "tokenExpirationDate",
     //     expirationDate.toString()
     //   );
-    navigation.navigate("HomeStack");
+    navigation.navigate("SignIn");
     // }
   } catch (error) {
     console.log(JSON.stringify(error));

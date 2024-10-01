@@ -19,6 +19,8 @@ import { useSearchText } from "../../hooks/useSearchText";
 import SearchBar from "../../components/SearchBar";
 import CategorySelector from "../../components/CategorySelector";
 import { libraryStrings, categorySelectorStrings } from "../../utils/strings";
+import PlaylistScreen from "../PlaylistScreen";
+
 const HomeScreen = () => {
   const { message } = useMessage();
   const { featuredPlaylists } = usePlaylist().featured();
@@ -38,6 +40,7 @@ const HomeScreen = () => {
         selected={category}
         setSelected={setCategory}
       />
+
       <HomeGrid items={recentlyPlayed} />
       <View style={styles.carouselView}>
         <HorizontalCarousel
