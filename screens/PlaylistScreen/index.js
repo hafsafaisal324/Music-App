@@ -23,11 +23,12 @@ import { usePlaylist } from "../../hooks/usePlaylist";
 
 const PlaylistScreen = () => {
   const param = useRoute().params.data;
+
   const { isLoading, isError, playlist, refetch, fetchNextPage } =
     usePlaylist().playlist(param.id);
   const { fetchNextItems } = handleScroll(fetchNextPage);
   const { openModal } = useContext(ModalContext);
-
+  console.log("Data===========>", playlist);
   return (
     <ScrollView onScroll={fetchNextItems} style={styles.background}>
       <PlaylistHeader playlist={param} />

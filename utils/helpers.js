@@ -1,40 +1,46 @@
-import {
-  contentType,
-  podcastStrings,
-  artistStrings,
-} from "./strings";
+import { contentType, podcastStrings, artistStrings } from "./strings";
 
 /**
  * Converts milliseconds into hours and minutes format.
- * @param {*} milliseconds 
- * @returns 
+ * @param {*} milliseconds
+ * @returns
  */
 export function convertMilliseconds(milliseconds) {
   const totalMinutes = Math.floor(milliseconds / 60000);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
 
-  const formattedHours = hours < 10 ? hours : '' + hours;
-  const formattedMinutes = minutes < 10 ? '0' + minutes : '' + minutes;
+  const formattedHours = hours < 10 ? hours : "" + hours;
+  const formattedMinutes = minutes < 10 ? "0" + minutes : "" + minutes;
 
-  return formattedHours + ' h ' + formattedMinutes + ' min';
+  return formattedHours + " h " + formattedMinutes + " min";
 }
 
 /**
  * Converts a date in "YYYY-MM-DD" format to "Day Month" format.
- * @param {*} inputDate 
- * @returns 
+ * @param {*} inputDate
+ * @returns
  */
 export function convertDate(inputDate) {
   const months = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
   ];
 
-  const [year, month, day] = inputDate.split('-');
+  const [year, month, day] = inputDate.split("-");
   const formattedMonth = months[parseInt(month, 10) - 1];
 
-  return day + ' ' + formattedMonth;
+  return day + " " + formattedMonth;
 }
 
 /**
@@ -43,9 +49,9 @@ export function convertDate(inputDate) {
  * @returns {string} The abbreviated day of the week (e.g., "Sun." for Sunday).
  */
 export function dayOfWeek(date) {
-  const days = ['Sun.', 'Mon.', 'Tue.', 'Wed.', 'Thu.', 'Fri.', 'Sat.'];
+  const days = ["Sun.", "Mon.", "Tue.", "Wed.", "Thu.", "Fri.", "Sat."];
   date = new Date(date);
-  return date.getDay() + ' ' + days[date.getDay()];
+  return date.getDay() + " " + days[date.getDay()];
 }
 
 /**
@@ -66,10 +72,12 @@ export function getYear(inputDate) {
  * @returns {string}
  */
 export function extractArtistNames(artists) {
-  const artistNames = artists.map(artist => artist.name);
-  const joinedNames = artistNames.join(', ');
+  const artistNames = artists.map((artist) => artist.name);
+  const joinedNames = artistNames.join(", ");
 
-  return joinedNames.length > 40 ? joinedNames.substring(0, 40) + '...' : joinedNames;
+  return joinedNames.length > 40
+    ? joinedNames.substring(0, 40) + "..."
+    : joinedNames;
 }
 
 /**
@@ -79,7 +87,9 @@ export function extractArtistNames(artists) {
  * @returns {string} The shortened or original text based on word count.
  */
 export function shortenText(text, words) {
-  return text.split('').length > words ? text.split('').slice(0, words).join('') + podcastStrings.etc : text;
+  return text.split("").length > words
+    ? text.split("").slice(0, words).join("") + podcastStrings.etc
+    : text;
 }
 
 /**
@@ -90,12 +100,12 @@ export function shortenText(text, words) {
 export function roundNumber(number) {
   let result = number;
   if (number >= 1000000) {
-    result = (number / 1000000).toFixed(1) + ' M';
+    result = (number / 1000000).toFixed(1) + " M";
   } else if (number >= 1000) {
-    result = (number / 1000).toFixed(1) + ' K';
+    result = (number / 1000).toFixed(1) + " K";
   }
   return result + artistStrings.followers;
-};
+}
 
 /**
  * Navigate to the corresponding screen based on the content type of the item.
@@ -105,6 +115,7 @@ export function roundNumber(number) {
  */
 export function handleNavigation(item, navigation) {
   let nav;
+
   if (item.type === contentType.album || item.type === contentType.track) {
     nav = navigation.navigate("Album", { title: item.name, data: item });
   } else if (item.type === contentType.playlist) {
@@ -115,7 +126,7 @@ export function handleNavigation(item, navigation) {
     nav = navigation.navigate("Artist", { title: item.name, data: item });
   }
   return nav;
-};
+}
 
 /**
  * A utility function for handling scrolling and triggering the fetching of the next page.
@@ -123,7 +134,6 @@ export function handleNavigation(item, navigation) {
  * @returns {Object} An object containing the fetchNextItems function.
  */
 export const handleScroll = (fetchNextPage) => {
-
   const fetchNextItems = (event) => {
     const { layoutMeasurement, contentOffset, contentSize } = event.nativeEvent;
     const maxScroll = Math.round(contentSize.height - layoutMeasurement.height);
@@ -145,16 +155,14 @@ export const handleScroll = (fetchNextPage) => {
  * @returns {Array} - An array of track objects with properties like title, artwork, url, and artist.
  */
 export const createQueue = (response, item, isShuffle) => {
-  const mappedSongs = response.map((song, index) => (
-    {
-      pos: index,
-      id: song.id ?? song.track.id,
-      title: song.name ?? song.track.name,
-      artwork: song.track?.album.images[0].url ?? item.images[0].url,
-      url: song.preview_url ?? song.track.preview_url,
-      artist: song.artists ?? song.track.artists
-    }
-  ));
+  const mappedSongs = response.map((song, index) => ({
+    pos: index,
+    id: song.id ?? song.track.id,
+    title: song.name ?? song.track.name,
+    artwork: song.track?.album.images[0].url ?? item.images[0].url,
+    url: song.preview_url ?? song.track.preview_url,
+    artist: song.artists ?? song.track.artists,
+  }));
   return isShuffle ? mappedSongs.sort(() => Math.random() - 0.5) : mappedSongs;
 };
 
@@ -179,10 +187,5 @@ export const parseOwner = (item) => {
  * @returns {*} - A randomly selected item from the array.
  */
 export const getRandomItem = (items) => {
-  return items[Math.floor(Math.random() * items.length - 1)]
+  return items[Math.floor(Math.random() * items.length - 1)];
 };
-
-
-
-
-
