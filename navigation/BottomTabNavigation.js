@@ -40,5 +40,14 @@ export const BottomTabNavigation = () => (
         unfocusedIcon: "library-outline",
       }}
     />
+    <Tab.Screen
+      name="Profile"
+      component={LibraryStackNavigation}
+      options={{
+        headerShown: false,
+        focusedIcon: "person",
+        unfocusedIcon: "person-outline",
+      }}
+    />
   </Tab.Navigator>
 );

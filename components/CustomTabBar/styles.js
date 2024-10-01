@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
    */
   bottomTabGradient: {
     flexDirection: "row",
-    height: 40,
+    height: 67,
     alignItems: "center",
-    position: "absolute",
-    bottom: 30,
+    // position: "absolute",
+    // bottom: 30,
     width: "100%",
     zIndex: 1,
+    backgroundColor: colors.bottomBar,
   },
   /**
    * Touchable Icon style.
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
    */
   labelText: {
     fontSize: 10,
-    color: colors.spotifyWhite,
+    color: colors.spotifyBlack,
   },
   /**
    * Circle Icon style.
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 4.5,
     paddingRight: 3,
-    color: colors.spotifyWhite,
+    color: colors.spotifyBlack,
   },
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "react-native-linear-gradient";
 
 import { exploreStrings, libraryStrings } from "../../utils/strings";
@@ -9,8 +9,7 @@ import colors from "../../utils/colors";
 import styles from "./styles";
 
 const CustomTabBar = ({ state, descriptors, navigation }) => (
-  <LinearGradient
-    colors={["transparent", colors.appBackground]}
+  <View
     // locations={[0.75, 0]}
     style={styles.bottomTabGradient}
   >
@@ -36,21 +35,21 @@ const CustomTabBar = ({ state, descriptors, navigation }) => (
               <Ionicons
                 name={focusedIcon}
                 size={24}
-                color={colors.spotifyWhite}
+                color={colors.spotifyBlack}
               />
             </>
           ) : (
             <Ionicons
               name={isFocused ? focusedIcon : unfocusedIcon}
               size={24}
-              color={colors.spotifyWhite}
+              color={colors.spotifyBlack}
             />
           )}
           <Text style={styles.labelText}>{route.name}</Text>
         </TouchableOpacity>
       );
     })}
-  </LinearGradient>
+  </View>
 );
 
 export default CustomTabBar;

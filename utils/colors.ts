@@ -1,6 +1,7 @@
 const colors = {
   primary: "#125cfa",
   secondary: "#447efb",
+  bottomBar: "#125cf9",
   appBackground: "#ffffff",
   appBackgroundTwo: "#E4EDFF",
   episodeCardBackground: "#0447d4",
