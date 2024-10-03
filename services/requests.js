@@ -14804,7 +14804,6 @@ export const getUserInfo = async () => {
 };
 
 export const requestItem = async (request) => {
-  console.log("Request==============>", request);
   const accessToken = await AsyncStorage.getItem("spotifyToken");
   const response = await axios({
     method: "GET",

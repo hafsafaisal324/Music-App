@@ -5,6 +5,8 @@ import LoginScreen from "../screens/LoginScreen";
 import { BottomTabNavigation } from "./BottomTabNavigation";
 import SignInScreen from "../screens/LoginScreen/Signin";
 import VerifyEmailScreen from "../screens/LoginScreen/VerifyEmailScreen";
+import OnboardingScreen from "../screens/Onboarding/Onboarding";
+import Questions from "../screens/Onboarding/Questions";
 
 const LoginStack = createNativeStackNavigator();
 export const LoginStackNavigation = () => (
@@ -27,6 +29,16 @@ export const LoginStackNavigation = () => (
     <LoginStack.Screen
       name="HomeStack"
       component={BottomTabNavigation}
+      options={{ headerShown: false }}
+    />
+    <LoginStack.Screen
+      name="Onboarding"
+      component={OnboardingScreen}
+      options={{ headerShown: false }}
+    />
+    <LoginStack.Screen
+      name="Questions"
+      component={Questions}
       options={{ headerShown: false }}
     />
   </LoginStack.Navigator>

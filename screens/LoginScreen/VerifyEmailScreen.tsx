@@ -18,7 +18,7 @@ export default function VerifyEmailScreen() {
 
   const handleVerify = () => {
     console.log("Code entered:", code);
-    navigation.navigate("HomeStack");
+    navigation.navigate("Onboarding");
     // Add your verification logic here
   };
 
@@ -71,6 +71,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontSize: 24,
@@ -112,6 +114,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     marginTop: 20,
+    width: "40%",
   },
   activeButton: {
     backgroundColor: "#0A74DA",
