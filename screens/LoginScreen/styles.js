@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
-import colors from '../../utils/colors';
+import colors from "../../utils/colors";
 
 const styles = StyleSheet.create({
   /**
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
    * Represents the background style for the entire app with the following properties:
    * - flex: 1 (flexible size to fit available space)
    * - backgroundColor: colors.appBackground (background color using the 'appBackground' color from the 'colors' object)
-  */
+   */
   background: {
     flex: 1,
     backgroundColor: colors.appBackground,
@@ -20,12 +20,14 @@ const styles = StyleSheet.create({
    * - height: 200 (height in points)
    * - paddingTop: 90 (top padding spacing)
    * - alignItems: 'center' (align items to the center of the container)
-  */
+   */
   logoView: {
-    flex: 1,
-    height: 200,
+    // flex: 1,
+
     paddingTop: 90,
-    alignItems: 'center',
+    paddingHorizontal: 15,
+
+    // alignItems: 'center',
   },
   /**
    * Styling for the Spotify TouchableOpacities.
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
    * - flex: 1 (flexible size to fit available space)
    * - paddingBottom: 40 (bottom padding spacing)
    * - justifyContent: 'flex-end' (justify content to the bottom of the container)
-  */
+   */
   touchableOpacityView: {
-    flex: 1,
-    paddingBottom: 40,
-    justifyContent: 'flex-end',
+    // flex: 1,
+    paddingTop: 50,
+    // justifyContent: "flex-end",
   },
   /**
    * Style for generic TouchableOpacities.
@@ -48,14 +50,14 @@ const styles = StyleSheet.create({
    * - alignItems: 'center' (align items to the center of the container)
    * - alignContent: 'center' (align content to the center of the container)
    * - flexDirection: 'row' (horizontal layout direction)
-  */
+   */
   genericTouchableOpacity: {
     borderRadius: 50,
-    marginHorizontal: 25,
+    marginHorizontal: 15,
     padding: 17,
-    alignItems: 'center',
-    alignContent: 'center',
-    flexDirection: 'row',
+    alignItems: "center",
+    alignContent: "center",
+    flexDirection: "row",
   },
   /**
    * Text under logo custom style.
@@ -64,12 +66,21 @@ const styles = StyleSheet.create({
    * - fontSize: 30 (font size in points)
    * - fontFamily: 'GothamBold' (custom family font)
    * - textAlign: 'center' (text alignment to the center)
-  */
+   */
   logoText: {
-    color: colors.spotifyWhite,
+    color: colors.textColor,
     fontSize: 30,
-    fontFamily: 'GothamBold',
-    textAlign: 'center',
+    fontFamily: "GothamBold",
+    textAlign: "left",
+
+    // textAlign: "center",
+  },
+  logoTextTwo: {
+    color: colors.textColorTwo,
+    fontSize: 18,
+    fontFamily: "GothamMedium",
+    textAlign: "left",
+    // textAlign: "center",
   },
   /**
    * Text style for all TouchableOpacities.
@@ -79,12 +90,12 @@ const styles = StyleSheet.create({
    * - fontFamily: 'GothamBold' (custom family font)
    * - textAlign: 'center' (text alignment to the center)
    * - flex: 1 (flexible size to fit available space)
-  */
+   */
   touchableOpacityText: {
     color: colors.spotifyWhite,
     fontSize: 20,
-    fontFamily: 'GothamBold',
-    textAlign: 'center',
+    fontFamily: "GothamBold",
+    textAlign: "center",
     flex: 1,
   },
 });

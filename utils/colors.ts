@@ -13,6 +13,10 @@ const colors = {
   spotifyGray: "#b3b3b3",
   spotifyDarkGray: "#535353",
   spotifySuperDarkGray: "#333333",
+  textColor: "#1E293B",
+  textColorTwo: "#465959",
+  darkBlack: "#000",
+  secondaryButtonColor: "#E0E3E3",
 };
 export type ColorType = typeof colors;
 export default colors;

@@ -14,6 +14,8 @@ import { useNavigation } from "@react-navigation/native";
 import { authorize } from "react-native-app-auth";
 
 import { ModalContext } from "../../context/modal";
+import { Icons } from "../../assets/icons/Icon";
+import { IconComponent } from "../../components/IconComponent/IconComponent";
 
 /**
  * Handles user login for the application.
@@ -49,22 +51,37 @@ const LoginScreen = () => {
   return (
     <SafeAreaView style={styles.background}>
       <View style={styles.logoView}>
-        <Entypo name="spotify" size={90} color={colors.spotifyWhite}></Entypo>
-        <Text style={[{ marginTop: 70 }, styles.logoText]}>
-          {" "}
-          {loginStrings.loginString1} {loginStrings.loginString2}
+        <IconComponent
+          icon={Icons.appIcon}
+          iconStyle={{ width: 60, height: 60 }}
+        />
+        {/* <Entypo name="spotify" size={90} color={colors.spotifyWhite}></Entypo> */}
+        <Text style={[{ marginTop: 50 }, styles.logoText]}>
+          {loginStrings.loginString1}
+        </Text>
+        <Text style={[styles.logoTextTwo, { marginTop: 5 }]}>
+          {loginStrings.loginString2}
         </Text>
       </View>
       <View style={styles.touchableOpacityView}>
         <TouchableOpacity
           onPress={() => onLogin(navigation)}
           style={[
-            { backgroundColor: colors.spotifyGreen },
+            { backgroundColor: colors.darkBlack },
             styles.genericTouchableOpacity,
           ]}
         >
-          <Text style={[styles.touchableOpacityText, { color: "black" }]}>
-            {" "}
+          <MaterialCommunityIcons
+            name="apple"
+            size={23}
+            color={colors.spotifyBlack}
+          ></MaterialCommunityIcons>
+          <Text
+            style={[
+              styles.touchableOpacityText,
+              { color: colors.spotifyBlack },
+            ]}
+          >
             {loginStrings.signInWithSpotify}
           </Text>
         </TouchableOpacity>
@@ -85,7 +102,6 @@ const LoginScreen = () => {
             color={colors.spotifyWhite}
           ></AntDesign>
           <Text style={styles.touchableOpacityText}>
-            {" "}
             {loginStrings.signInWithGoogle}
           </Text>
         </TouchableOpacity>
@@ -111,13 +127,23 @@ const LoginScreen = () => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+          style={[
+            styles.genericTouchableOpacity,
+            {
+              marginTop: 15,
+              borderColor: colors.spotifyWhite,
+              borderWidth: 0.7,
+              backgroundColor: colors.secondaryButtonColor,
+            },
+          ]}
           onPress={() => openModal()}
-          style={styles.genericTouchableOpacity}
         >
-          <Text style={[{ paddingTop: 10 }, styles.touchableOpacityText]}>
-            {" "}
-            {loginStrings.signIn}
-          </Text>
+          <MaterialCommunityIcons
+            name="email"
+            size={26}
+            color={colors.spotifyWhite}
+          ></MaterialCommunityIcons>
+          <Text style={styles.touchableOpacityText}>{loginStrings.signIn}</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>

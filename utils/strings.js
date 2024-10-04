@@ -2,13 +2,13 @@
  *********** SCREEN STRINGS **********
  *************************************/
 export const loginStrings = {
-  loginString1: "Millions of Songs. \n",
-  loginString2: "Free on Spotify.",
+  loginString1: "Reconnect with your personal meditation space.",
+  loginString2: "Continue your mindfulness journey.",
   signInWithSpotify: "Continue with Apple",
   signInWithPhoneNumber: "Continue with phone number",
   signInWithGoogle: "Continue with Google",
   signInWithFacebook: "Continue with Facebook",
-  signIn: "Sign In",
+  signIn: "Continue with Email",
 };
 
 export const homeStrings = {
