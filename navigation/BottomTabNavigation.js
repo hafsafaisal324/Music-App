@@ -6,6 +6,7 @@ import { LibraryStackNavigation } from "./LibraryStackNavigation";
 import { SearchStackNavigation } from "./SearchStackNavigation";
 
 import CustomTabBar from "../components/CustomTabBar";
+import { ProfileStackNavigation } from "./ProfileTabNavigation";
 
 const Tab = createBottomTabNavigator();
 export const BottomTabNavigation = () => (
@@ -23,12 +24,12 @@ export const BottomTabNavigation = () => (
       }}
     />
     <Tab.Screen
-      name="Explore"
+      name="Search"
       component={SearchStackNavigation}
       options={{
         headerShown: false,
-        focusedIcon: "search-outline",
-        unfocusedIcon: "circle",
+        focusedIcon: "search-circle-sharp",
+        unfocusedIcon: "search-outline",
       }}
     />
     <Tab.Screen
@@ -36,13 +37,13 @@ export const BottomTabNavigation = () => (
       component={LibraryStackNavigation}
       options={{
         headerShown: false,
-        focusedIcon: "library",
-        unfocusedIcon: "library-outline",
+        focusedIcon: "play-circle",
+        unfocusedIcon: "play-circle-outline",
       }}
     />
     <Tab.Screen
       name="Profile"
-      component={LibraryStackNavigation}
+      component={ProfileStackNavigation}
       options={{
         headerShown: false,
         focusedIcon: "person",

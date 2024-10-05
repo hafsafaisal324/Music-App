@@ -6,6 +6,7 @@ import PlaylistScreen from "../screens/PlaylistScreen";
 import PodcastScreen from "../screens/PodcastScreen";
 import ArtistScreen from "../screens/ArtistScreen";
 import HomeScreen from "../screens/HomeScreen";
+import NotificationScreen from "../screens/HomeScreen/NotificationScreen";
 
 const HomeStack = createNativeStackNavigator();
 export const HomeStackNavigation = () => (
@@ -33,6 +34,11 @@ export const HomeStackNavigation = () => (
     <HomeStack.Screen
       name="Artist"
       component={ArtistScreen}
+      options={() => ({ headerShown: false })}
+    />
+    <HomeStack.Screen
+      name="NotificationScreen"
+      component={NotificationScreen}
       options={() => ({ headerShown: false })}
     />
   </HomeStack.Navigator>

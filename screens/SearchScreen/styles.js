@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: colors.appBackgroundTwo,
   },
+  titleText: {
+    color: colors.spotifyWhite,
+    fontSize: 25,
+    fontFamily: "GothamBold",
+    textAlign: "left",
+    marginVertical: 7,
+  },
 });
 
 export default styles;
