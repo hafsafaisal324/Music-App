@@ -16,6 +16,7 @@ import { authorize } from "react-native-app-auth";
 import { ModalContext } from "../../context/modal";
 import { Icons } from "../../assets/icons/Icon";
 import { IconComponent } from "../../components/IconComponent/IconComponent";
+import { set } from "react-hook-form";
 
 /**
  * Handles user login for the application.
@@ -43,6 +44,13 @@ const onLogin = async (navigation) => {
     console.log(JSON.stringify(error));
   }
 };
+
+const setting = (navigation) => {
+  navigation.navigate("Setting");
+  // Add your verification logic here
+};
+
+
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -127,6 +135,7 @@ const LoginScreen = () => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+         onPress={() => setting(navigation)}
           style={[
             styles.genericTouchableOpacity,
             {
@@ -136,7 +145,7 @@ const LoginScreen = () => {
               backgroundColor: colors.secondaryButtonColor,
             },
           ]}
-          onPress={() => openModal()}
+          // onPress={() => openModal()}
         >
           <MaterialCommunityIcons
             name="email"
