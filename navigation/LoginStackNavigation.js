@@ -7,6 +7,7 @@ import SignInScreen from "../screens/LoginScreen/Signin";
 import VerifyEmailScreen from "../screens/LoginScreen/VerifyEmailScreen";
 import OnboardingScreen from "../screens/Onboarding/Onboarding";
 import Questions from "../screens/Onboarding/Questions";
+import PaymentScreen from "../screens/PaymentScreen/PaymentScreen";
 
 const LoginStack = createNativeStackNavigator();
 export const LoginStackNavigation = () => (
@@ -39,6 +40,11 @@ export const LoginStackNavigation = () => (
     <LoginStack.Screen
       name="Questions"
       component={Questions}
+      options={{ headerShown: false }}
+    />
+    <LoginStack.Screen
+      name="PaymentScreen"
+      component={PaymentScreen}
       options={{ headerShown: false }}
     />
   </LoginStack.Navigator>

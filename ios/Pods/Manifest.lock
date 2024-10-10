@@ -1231,6 +1231,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - RNIap (12.15.4):
+    - React-Core
   - RNReanimated (3.15.3):
     - DoubleConversion
     - glog
@@ -1391,6 +1393,7 @@ DEPENDENCIES:
   - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNIap (from `../node_modules/react-native-iap`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -1531,6 +1534,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNIap:
+    :path: "../node_modules/react-native-iap"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -1608,6 +1613,7 @@ SPEC CHECKSUMS:
   RNCClipboard: 5e503962f0719ace8f7fdfe9c60282b526305c85
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNGestureHandler: 28078232f2868d3dcb4d4b6c8ab8691700187664
+  RNIap: 38776f86996edea5837ba2a0dfc1e35427191327
   RNReanimated: 09ea7d18be5cac02e06daeee982c7f6a945c5478
   RNScreens: aa943ad421c3ced3ef5a47ede02b0cbfc43a012e
   RNSVG: a48668fd382115bc89761ce291a81c4ca5f2fd2e

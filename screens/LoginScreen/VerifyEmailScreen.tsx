@@ -9,11 +9,11 @@ export default function VerifyEmailScreen() {
   const [hasCopied, setHasCopied] = useState(false);
   const navigation = useNavigation();
   const handlePasteFromClipboard = async () => {
-    const clipboardContent = await Clipboard.getString();
-    if (clipboardContent.length === 6) {
-      setCode(clipboardContent);
-      setHasCopied(true);
-    }
+    // const clipboardContent = await Clipboard.getString();
+    // if (clipboardContent.length === 6) {
+    //   setCode(clipboardContent);
+    //   setHasCopied(true);
+    // }
   };
 
   const handleVerify = () => {
