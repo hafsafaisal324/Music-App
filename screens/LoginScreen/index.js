@@ -44,10 +44,26 @@ const onLogin = async (navigation) => {
     console.log(JSON.stringify(error));
   }
 };
-
-
-
-
+const onLoginEmail = async (navigation) => {
+  try {
+    // const result = await authorize(spotifyAuthConfig);
+    // if (result.accessToken) {
+    //   console.log("token: " + result.accessToken);
+    //   const expirationDate = new Date(
+    //     result.accessTokenExpirationDate
+    //   ).getTime();
+    //   await AsyncStorage.setItem("spotifyToken", result.accessToken);
+    //   await AsyncStorage.setItem("refreshToken", result.refreshToken);
+    //   await AsyncStorage.setItem(
+    //     "tokenExpirationDate",
+    //     expirationDate.toString()
+    //   );
+    navigation.navigate("PaymentScreen");
+    // }
+  } catch (error) {
+    console.log(JSON.stringify(error));
+  }
+};
 
 const LoginScreen = () => {
   const navigation = useNavigation();
@@ -141,7 +157,7 @@ const LoginScreen = () => {
               backgroundColor: colors.secondaryButtonColor,
             },
           ]}
-           onPress={() => openModal()}
+          onPress={() => onLoginEmail(navigation)}
         >
           <MaterialCommunityIcons
             name="email"
