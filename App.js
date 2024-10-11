@@ -6,7 +6,6 @@ import { usePlayer } from "./hooks/usePlayer";
 import { useToken } from "./hooks/useToken";
 import { ModalProvider } from "./context/modal";
 import { PlayerProvider } from "./context/player";
-
 import { LoginStackNavigation } from "./navigation/LoginStackNavigation";
 import { BottomTabNavigation } from "./navigation/BottomTabNavigation";
 import SplashScreen from "./screens/SplashScreen";

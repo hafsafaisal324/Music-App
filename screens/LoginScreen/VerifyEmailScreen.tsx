@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import OTPInputView from "@twotalltotems/react-native-otp-input";
-import Clipboard from "@react-native-clipboard/clipboard";
+// import Clipboard from "@react-native-clipboard/clipboard";
 import { useNavigation } from "@react-navigation/native";
 
 export default function VerifyEmailScreen() {
   const [code, setCode] = useState("");
   const [hasCopied, setHasCopied] = useState(false);
   const navigation = useNavigation();
-  const handlePasteFromClipboard = async () => {
-    // const clipboardContent = await Clipboard.getString();
-    // if (clipboardContent.length === 6) {
-    //   setCode(clipboardContent);
-    //   setHasCopied(true);
-    // }
-  };
+  // const handlePasteFromClipboard = async () => {
+  //   const clipboardContent = await Clipboard.getString();
+  //   if (clipboardContent.length === 6) {
+  //     setCode(clipboardContent);
+  //     setHasCopied(true);
+  //   }
+  // };
 
   const handleVerify = () => {
     console.log("Code entered:", code);
@@ -41,9 +41,9 @@ export default function VerifyEmailScreen() {
       />
 
       {/* Paste from clipboard */}
-      <TouchableOpacity onPress={handlePasteFromClipboard}>
+      {/* <TouchableOpacity onPress={handlePasteFromClipboard}>
         <Text style={styles.pasteText}>Paste from clipboard</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
 
       {/* Verify button */}
       <TouchableOpacity

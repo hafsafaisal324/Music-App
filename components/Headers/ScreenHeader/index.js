@@ -32,12 +32,21 @@ const ScreenHeader = ({ title, icon }) => {
         )}
       </TouchableOpacity>
       <Text style={styles.titleText}>{title}</Text>
+      <View  style={styles.button}>
       <TouchableOpacity
-        style={styles.touchableIcon}
+        // //  style={styles.touchableIcon}
         onPress={() => navigation.navigate("NotificationScreen")}
       >
         <Ionicons name={icon} style={styles.icon} />
       </TouchableOpacity>
+      <TouchableOpacity
+        // style={styles.touchableIcon}
+        onPress={() => navigation.navigate("Setting")}
+      >
+        <Ionicons name="settings-outline"style={styles.icon} />
+      </TouchableOpacity>
+      </View>
+
     </View>
   );
 };

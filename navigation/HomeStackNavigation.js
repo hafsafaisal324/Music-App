@@ -1,12 +1,13 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import AlbumScreen from "../screens/AlbumScreen";
 import PlaylistScreen from "../screens/PlaylistScreen";
 import PodcastScreen from "../screens/PodcastScreen";
 import ArtistScreen from "../screens/ArtistScreen";
 import HomeScreen from "../screens/HomeScreen";
 import NotificationScreen from "../screens/HomeScreen/NotificationScreen";
+import SettingsScreen from "../screens/SettingScreen/SettingsScreen"
+
 
 const HomeStack = createNativeStackNavigator();
 export const HomeStackNavigation = () => (
@@ -41,5 +42,11 @@ export const HomeStackNavigation = () => (
       component={NotificationScreen}
       options={() => ({ headerShown: false })}
     />
+    <HomeStack.Screen
+      name="Setting"
+      component={SettingsScreen}
+      options={()=>({ headerShown: false })}
+    /> 
+    
   </HomeStack.Navigator>
 );

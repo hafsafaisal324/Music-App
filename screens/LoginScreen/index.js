@@ -16,6 +16,7 @@ import { authorize } from "react-native-app-auth";
 import { ModalContext } from "../../context/modal";
 import { Icons } from "../../assets/icons/Icon";
 import { IconComponent } from "../../components/IconComponent/IconComponent";
+import { set } from "react-hook-form";
 
 /**
  * Handles user login for the application.
