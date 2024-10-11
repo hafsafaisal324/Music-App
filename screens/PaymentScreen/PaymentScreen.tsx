@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Platform,
   Linking,
+  Alert,
 } from "react-native";
 import RNIap, {
   Product,
@@ -90,7 +91,7 @@ const PaymentScreen = () => {
             } else if (Platform.OS === "ios") {
               setProductList(products);
             } else {
-              alert("oops! ,something went wrong.");
+              Alert.alert("oops! ,something went wrong.");
             }
           }
         }
