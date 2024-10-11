@@ -7,11 +7,30 @@ import ConditionalImage from "../../ConditionalImage";
 import { handleNavigation } from "../../../utils/helpers";
 import styles from "./styles";
 
-const HorizontalCarousel = ({ items, title }) => {
+const HorizontalCarousel = ({
+  items,
+  title,
+  buttonText = "",
+  onPress = null,
+}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.carouseView}>
-      {items && <Text style={styles.titleText}>{title}</Text>}
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
+        {items && <Text style={styles.titleText}>{title}</Text>}
+        {buttonText != "" && (
+          <TouchableOpacity onPress={() => onPress()}>
+            <Text style={styles.buttonText}>{buttonText}</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+
       <FlatList
         data={items}
         horizontal

@@ -28,6 +28,13 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginVertical: 7,
   },
+  buttonText: {
+    color: colors.buttonText,
+    fontSize: 12,
+    fontFamily: "GothamBold",
+    textAlign: "left",
+    marginVertical: 7,
+  },
   /**
    * Image View style.
    * Represents the style for an image view with the following properties:

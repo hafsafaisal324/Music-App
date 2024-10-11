@@ -20,6 +20,7 @@ import SearchBar from "../../components/SearchBar";
 import CategorySelector from "../../components/CategorySelector";
 import { libraryStrings, categorySelectorStrings } from "../../utils/strings";
 import PlaylistScreen from "../PlaylistScreen";
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
   const { message } = useMessage();
@@ -30,6 +31,7 @@ const HomeScreen = () => {
   const [category, setCategory] = useState(null);
   const { colors } = useTheme();
   const styles = style(colors);
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.background}>
       <ScreenHeader title={message} icon={"notifications-outline"} />
@@ -48,10 +50,13 @@ const HomeScreen = () => {
           title={carouselStrings.featuredPlaylists}
         />
         <HorizontalCarousel
+          onPress={() => navigation.navigate("Setting")}
+          buttonText="See All"
           items={featuredAlbums}
           title={carouselStrings.featuredAlbums}
         />
         <HorizontalCarousel
+          buttonText="Explore All"
           items={featuredAlbums}
           title={carouselStrings.myPlaylists}
         />

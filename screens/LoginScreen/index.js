@@ -64,7 +64,9 @@ const onLoginEmail = async (navigation) => {
     console.log(JSON.stringify(error));
   }
 };
-
+const openHome = (navigation) => {
+  navigation.navigate("HomeStack");
+};
 const LoginScreen = () => {
   const navigation = useNavigation();
   const { openModal } = useContext(ModalContext);
@@ -115,7 +117,7 @@ const LoginScreen = () => {
             },
             styles.genericTouchableOpacity,
           ]}
-          onPress={() => openModal()}
+          onPress={() => openHome(navigation)}
         >
           <AntDesign
             name="google"

@@ -17,6 +17,7 @@ const colors = {
   textColorTwo: "#465959",
   darkBlack: "#000",
   secondaryButtonColor: "#E0E3E3",
+  buttonText: "See All",
 };
 export type ColorType = typeof colors;
 export default colors;
