@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { ScrollView,View, Text, Switch, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { ScrollView,View, Text, Switch, TouchableOpacity, Image } from 'react-native';
 import styles from './styles';
 import colors from '../../utils/colors';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-
-
+import Icon from "react-native-vector-icons/Ionicons";
 
 const SettingsScreen = (
   {navigation}
@@ -19,7 +17,7 @@ const SettingsScreen = (
     <ScrollView style={styles.container}>
       <View style={styles.wrapper}> 
       <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>
-      <AntDesign name="left" size={17} color={colors.spotifyWhite} />
+      <Icon name="chevron-back" size={17} color={colors.spotifyWhite} />
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.iconContainer} >
@@ -68,7 +66,7 @@ const SettingsScreen = (
         <Text style={styles.sectionTitle}>Profile</Text>
         <TouchableOpacity style={styles.item}>
           <Text style={styles.itemText}>Edit Profile</Text>
-          <AntDesign name="right" size={13} color={colors.spotifyWhite} />
+          <Icon name="chevron-forward" size={13} color={colors.spotifyWhite} />
         </TouchableOpacity>
       </View>
 
@@ -76,17 +74,17 @@ const SettingsScreen = (
         <Text style={styles.sectionTitle}>About</Text>
         <TouchableOpacity style={styles.item}>
           <Text style={styles.itemText}>Terms and Services</Text>
-          <AntDesign name="right" size={13} color={colors.spotifyWhite} />
+          <Icon name="chevron-forward" size={13} color={colors.spotifyWhite} />
 
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Text style={styles.itemText}>About STN</Text>
-          <AntDesign name="right" size={13} color={colors.spotifyWhite} />
+          <Icon name="chevron-forward" size={13} color={colors.spotifyWhite} />
 
         </TouchableOpacity>
         <TouchableOpacity style={styles.item}>
           <Text style={styles.itemText}>Privacy Policy</Text>
-          <AntDesign name="right" size={13} color={colors.spotifyWhite} />
+          <Icon name="chevron-forward" size={13} color={colors.spotifyWhite} />
 
         </TouchableOpacity>
       </View>

@@ -1,10 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import LoginScreen from "../screens/LoginScreen";
 import { BottomTabNavigation } from "./BottomTabNavigation";
 import SignInScreen from "../screens/LoginScreen/Signin";
-import SettingsScreen from "../screens/SettingScreen/SettingsScreen"
 import VerifyEmailScreen from "../screens/LoginScreen/VerifyEmailScreen";
 import OnboardingScreen from "../screens/Onboarding/Onboarding";
 import Questions from "../screens/Onboarding/Questions";
@@ -42,11 +40,6 @@ export const LoginStackNavigation = () => (
       component={Questions}
       options={{ headerShown: false }}
     />
-    <LoginStack.Screen
-      name="Setting"
-      component={SettingsScreen}
-      options={{ headerShown: false }}
-    />
-     
+    
   </LoginStack.Navigator>
 );

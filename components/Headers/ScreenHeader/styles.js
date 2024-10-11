@@ -14,6 +14,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
   },
+  button:{
+    flexDirection: 'row',
+    gap:10,
+    /* Space between the icons */
+
+
+  },
   /**
    * Profile Icon View style.
    * Represents the style for a view containing a profile icon with the following properties:

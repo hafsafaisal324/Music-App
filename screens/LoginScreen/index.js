@@ -45,10 +45,7 @@ const onLogin = async (navigation) => {
   }
 };
 
-const setting = (navigation) => {
-  navigation.navigate("Setting");
-  // Add your verification logic here
-};
+
 
 
 
@@ -135,7 +132,6 @@ const LoginScreen = () => {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
-         onPress={() => setting(navigation)}
           style={[
             styles.genericTouchableOpacity,
             {
@@ -145,7 +141,7 @@ const LoginScreen = () => {
               backgroundColor: colors.secondaryButtonColor,
             },
           ]}
-          // onPress={() => openModal()}
+           onPress={() => openModal()}
         >
           <MaterialCommunityIcons
             name="email"
