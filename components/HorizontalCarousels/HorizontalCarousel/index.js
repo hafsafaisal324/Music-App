@@ -16,13 +16,7 @@ const HorizontalCarousel = ({
   const navigation = useNavigation();
   return (
     <View style={styles.carouseView}>
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
+      <View style={styles.buttonContainer}>
         {items && <Text style={styles.titleText}>{title}</Text>}
         {buttonText != "" && (
           <TouchableOpacity onPress={() => onPress()}>

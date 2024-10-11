@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
     textAlign: "left",
     marginVertical: 7,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   /**
    * Image View style.
    * Represents the style for an image view with the following properties:
