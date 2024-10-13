@@ -50,7 +50,7 @@ const HomeScreen = () => {
           title={carouselStrings.featuredPlaylists}
         />
         <HorizontalCarousel
-          onPress={() => navigation.navigate("Setting")}
+          onPress={() => navigation.navigate("AllCategories")}
           buttonText="See All"
           items={featuredAlbums}
           title={carouselStrings.featuredAlbums}

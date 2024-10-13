@@ -36,7 +36,7 @@ const HorizontalCarousel = ({
           >
             <ConditionalImage
               image={item.images[0]?.url}
-              size={40}
+              size={10}
               style={styles.image}
               right={true}
             />
