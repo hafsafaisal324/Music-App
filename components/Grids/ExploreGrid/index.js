@@ -18,6 +18,7 @@ import { ModalContext } from "../../../context/modal";
 const ExploreGrid = () => {
   const { openModal } = useContext(ModalContext);
   const { isLoading, isError, categories, refetch } = useCategories();
+
   return (
     <>
       {isLoading || isError ? (
