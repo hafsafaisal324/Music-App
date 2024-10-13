@@ -7,10 +7,16 @@ import VerifyEmailScreen from "../screens/LoginScreen/VerifyEmailScreen";
 import OnboardingScreen from "../screens/Onboarding/Onboarding";
 import Questions from "../screens/Onboarding/Questions";
 import PaymentScreen from "../screens/PaymentScreen/PaymentScreen";
+import CustomOnboarding from "../screens/Onboarding/OnboadingNew";
 
 const LoginStack = createNativeStackNavigator();
 export const LoginStackNavigation = () => (
   <LoginStack.Navigator>
+    <LoginStack.Screen
+      name="CustomOnboarding"
+      component={CustomOnboarding}
+      options={{ headerShown: false }}
+    />
     <LoginStack.Screen
       name="Login"
       component={LoginScreen}
