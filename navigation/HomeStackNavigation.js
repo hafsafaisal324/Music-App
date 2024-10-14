@@ -6,7 +6,7 @@ import PodcastScreen from "../screens/PodcastScreen";
 import ArtistScreen from "../screens/ArtistScreen";
 import HomeScreen from "../screens/HomeScreen";
 import NotificationScreen from "../screens/HomeScreen/NotificationScreen";
-import SettingsScreen from "../screens/SettingScreen/SettingsScreen"
+import SettingsScreen from "../screens/SettingScreen/SettingsScreen";
 
 import AllCategoriesScreen from "../screens/AllCategories";
 
@@ -46,13 +46,12 @@ export const HomeStackNavigation = () => (
     <HomeStack.Screen
       name="Setting"
       component={SettingsScreen}
-      options={()=>({ headerShown: false })}
-    /> 
+      options={() => ({ headerShown: false })}
+    />
     <HomeStack.Screen
       name="AllCategories"
       component={AllCategoriesScreen}
-      options={()=>({ headerShown: false })}
-    /> 
-    
+      options={() => ({ headerShown: false })}
+    />
   </HomeStack.Navigator>
 );

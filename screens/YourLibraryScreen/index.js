@@ -4,6 +4,9 @@ import {
   View,
   ActivityIndicator,
   SafeAreaView,
+  TouchableOpacity,
+  Text,
+  Image,
 } from "react-native";
 
 import { libraryStrings, categorySelectorStrings } from "../../utils/strings";
@@ -19,6 +22,7 @@ import ErrorCard from "../../components/Cards/FallbackCard";
 import CategorySelector from "../../components/CategorySelector";
 import colors from "../../utils/colors";
 import BottomPadding from "../../components/BottomPadding";
+import { useNavigation } from "@react-navigation/native";
 
 /**
  * Filters an array of items based on a search text and a category filter.
@@ -47,16 +51,40 @@ const YourLibraryScreen = () => {
   const [category, setCategory] = useState(null);
   const { searchText, setSearchText } = useSearchText("");
   const { isLoading, isError, data, refetch } = useLibraryContent();
-
+  const navigation = useNavigation();
   return (
     <ScrollView style={styles.background}>
       <ScreenHeader title={libraryStrings.library} icon={"add"} />
       <SearchBar valueText={searchText} changeText={setSearchText} />
-      <CategorySelector
+      {/* Create New Playlist Button */}
+      <TouchableOpacity
+        style={styles.createButton}
+        onPress={() => navigation.navigate("CreatePlaylistScreen")}
+      >
+        <Text style={styles.createButtonText}>+ Create New Playlist</Text>
+      </TouchableOpacity>
+
+      {/* Playlist Section */}
+      <Text style={styles.playlistSectionTitle}>Playlist</Text>
+
+      <View style={styles.playlistCard}>
+        <Image
+          source={{ uri: "https://example.com/playlist-image.jpg" }} // Add your playlist image URL
+          style={styles.playlistImage}
+        />
+        <View style={styles.playlistDetails}>
+          <Text style={styles.playlistTitle}>My Playlist - Awareness</Text>
+          <Text style={styles.playlistSessions}>No of Sessions: 150</Text>
+        </View>
+        <TouchableOpacity style={styles.arrowButton}>
+          <Text style={styles.arrowText}>{">"}</Text>
+        </TouchableOpacity>
+      </View>
+      {/* <CategorySelector
         categories={categorySelectorStrings}
         selected={category}
         setSelected={setCategory}
-      />
+      /> */}
       {/* {!isLoading && (
         <View style={styles.fallbackView}>
           <ActivityIndicator color={colors.spotifyGreen} />

@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
    * - height: 100 (height of 100 units)
    */
   cardImage: {
-    borderRadius: 10,
+    borderRadius: 5,
     width: Dimensions.get("window").width / 2.2,
     height: 100,
   },

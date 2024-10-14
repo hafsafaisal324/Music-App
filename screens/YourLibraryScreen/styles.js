@@ -14,6 +14,57 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: colors.appBackgroundTwo,
   },
+  createButton: {
+    backgroundColor: "#3A5EE0", // Blue button
+    paddingVertical: 12,
+    borderRadius: 8,
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  createButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  playlistSectionTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    color: "#333",
+  },
+  playlistCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  playlistImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+    marginRight: 10,
+  },
+  playlistDetails: {
+    flex: 1,
+  },
+  playlistTitle: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  playlistSessions: {
+    fontSize: 14,
+    color: "#666",
+  },
+  arrowButton: {
+    padding: 10,
+  },
+  arrowText: {
+    fontSize: 18,
+    color: "#3A5EE0", // Same as button color
+  },
   /**
    * Icons View style.
    * Represents the style for an icons view with the following properties:
