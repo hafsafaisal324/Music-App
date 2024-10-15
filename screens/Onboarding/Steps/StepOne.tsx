@@ -31,9 +31,11 @@ export default function StepOne({ formData, handleNext, updateFormData }) {
         value={lastName}
         onChangeText={setLastName}
       />
-      <TouchableOpacity style={styles.button} onPress={handleNextStep}>
-        <Text style={styles.buttonText}>Next</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={handleNextStep}>
+          <Text style={styles.buttonText}>Next</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -43,6 +45,12 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: "center",
     padding: 20,
+  },
+  buttonContainer: {
+    position: "absolute",
+    bottom: 30,
+    width: "100%",
+    alignSelf: "center",
   },
   title: {
     fontSize: 24,

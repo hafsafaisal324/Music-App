@@ -59,22 +59,24 @@ export default function StepFive({
         layout="column" // Arrange radio buttons in a column
         containerStyle={styles.radioGroupContainer} // Add container style here
       />
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleBack}>
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[
-            styles.button,
-            isNextDisabled
-              ? styles.disabledNextButton
-              : styles.activeNextButton,
-          ]} // Conditional styling
-          onPress={handleNext}
-          disabled={isNextDisabled} // Disable if no option is selected
-        >
-          <Text style={styles.buttonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.buttonContainerNew}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={handleBack}>
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.button,
+              isNextDisabled
+                ? styles.disabledNextButton
+                : styles.activeNextButton,
+            ]} // Conditional styling
+            onPress={handleNext}
+            disabled={isNextDisabled} // Disable if no option is selected
+          >
+            <Text style={styles.buttonText}>Next</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -89,6 +91,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 20,
+  },
+  buttonContainerNew: {
+    position: "absolute",
+    bottom: 30,
+    width: "100%",
+    alignSelf: "center",
   },
   radioGroupContainer: {
     // Added styles to align the RadioGroup

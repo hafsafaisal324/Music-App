@@ -31,13 +31,15 @@ export default function StepTwo({
         value={country}
         onChangeText={setCountry}
       />
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleBack}>
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleNextStep}>
-          <Text style={styles.buttonText}>Next</Text>
-        </TouchableOpacity>
+      <View style={styles.buttonContainerNew}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={handleBack}>
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={handleNextStep}>
+            <Text style={styles.buttonText}>Next</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -53,6 +55,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 30,
+  },
+  buttonContainerNew: {
+    position: "absolute",
+    bottom: 30,
+    width: "100%",
+    alignSelf: "center",
   },
   input: {
     borderWidth: 1,

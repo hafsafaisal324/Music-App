@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 // Get the device width
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 export default function CustomOnboarding({ navigation }) {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width,
-    height: 419, // Adjust as necessary
+    height: height / 2, // Adjust as necessary
     resizeMode: "cover",
   },
   textContainer: {

@@ -8,10 +8,10 @@ import { ModalProvider } from "./context/modal";
 import { PlayerProvider } from "./context/player";
 import { LoginStackNavigation } from "./navigation/LoginStackNavigation";
 import { BottomTabNavigation } from "./navigation/BottomTabNavigation";
-import SplashScreen from "./screens/SplashScreen";
+
 import { store } from "./store";
 import { Provider } from "react-redux";
-
+import SplashScreen from "react-native-splash-screen";
 export default function App() {
   const { setupPlayer } = usePlayer();
   const { token } = useToken();
@@ -20,16 +20,19 @@ export default function App() {
   useEffect(() => {
     setupPlayer();
   }, []);
+  const handleReady = () => {
+    SplashScreen.hide();
+  };
 
   return (
     <ModalProvider>
       <Provider store={store}>
         <QueryClientProvider client={queryClient}>
           <SafeAreaView style={{ flex: 1 }} dges={["top", "left", "right"]}>
-            <NavigationContainer>
+            <NavigationContainer onReady={handleReady}>
               <PlayerProvider>
                 {token === null ? (
-                  <SplashScreen />
+                  <LoginStackNavigation />
                 ) : token.length > 0 ? (
                   <BottomTabNavigation />
                 ) : (

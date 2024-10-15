@@ -60,25 +60,32 @@ export default function StepFour({
           </TouchableOpacity>
         ))}
       </View>
+      <View style={styles.buttonContainerNew}>
+        <TouchableOpacity
+          style={[
+            styles.nextButton,
+            selectedOptions.length > 0
+              ? styles.activeNextButton
+              : styles.disabledNextButton,
+          ]}
+          onPress={handleNext}
+          disabled={selectedOptions.length === 0}
+        >
+          <Text style={styles.nextButtonText}>Next</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[
-          styles.nextButton,
-          selectedOptions.length > 0
-            ? styles.activeNextButton
-            : styles.disabledNextButton,
-        ]}
-        onPress={handleNext}
-        disabled={selectedOptions.length === 0}
-      >
-        <Text style={styles.nextButtonText}>Next</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => toggleOption("Support all meditations")}>
-        <Text style={styles.supportAll}>Support all meditations</Text>
-      </TouchableOpacity>
-
-      <Button title="Back" onPress={handleBack} />
+        <TouchableOpacity
+          onPress={() => toggleOption("Support all meditations")}
+        >
+          <Text style={styles.supportAll}>Support all meditations</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.nextButton, styles.activeNextButton]}
+          onPress={handleBack}
+        >
+          <Text style={styles.nextButtonText}>Back</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -87,7 +94,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    justifyContent: "center",
+    // justifyContent: "center",
+  },
+  buttonContainerNew: {
+    position: "absolute",
+    bottom: 30,
+    width: "100%",
+    alignSelf: "center",
   },
   question: {
     fontSize: 24,

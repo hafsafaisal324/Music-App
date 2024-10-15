@@ -28,7 +28,6 @@ export default function VerifyEmailScreen() {
       <Text style={styles.subtitle}>
         We just sent a 6-digit code to andren@email.com, enter it below
       </Text>
-
       {/* OTP Input View */}
       <OTPInputView
         style={styles.otpInput}
@@ -39,12 +38,10 @@ export default function VerifyEmailScreen() {
         codeInputFieldStyle={styles.underlineStyleBase}
         codeInputHighlightStyle={styles.underlineStyleHighLighted}
       />
-
       {/* Paste from clipboard */}
       {/* <TouchableOpacity onPress={handlePasteFromClipboard}>
         <Text style={styles.pasteText}>Paste from clipboard</Text>
       </TouchableOpacity> */}
-
       {/* Verify button */}
       <TouchableOpacity
         style={[
@@ -56,7 +53,6 @@ export default function VerifyEmailScreen() {
       >
         <Text style={styles.verifyButtonText}>Verify</Text>
       </TouchableOpacity>
-
       <TouchableOpacity style={styles.resendContainer}>
         <Text style={styles.resendText}>
           Did not receive code? <Text style={styles.resendLink}>Resend</Text>
