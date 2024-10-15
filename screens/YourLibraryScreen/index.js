@@ -66,20 +66,24 @@ const YourLibraryScreen = () => {
 
       {/* Playlist Section */}
       <Text style={styles.playlistSectionTitle}>Playlist</Text>
-
-      <View style={styles.playlistCard}>
-        <Image
-          source={{ uri: "https://example.com/playlist-image.jpg" }} // Add your playlist image URL
-          style={styles.playlistImage}
-        />
-        <View style={styles.playlistDetails}>
-          <Text style={styles.playlistTitle}>My Playlist - Awareness</Text>
-          <Text style={styles.playlistSessions}>No of Sessions: 150</Text>
+      {[1, 2, 3, 4, 5].map(() => (
+        <View style={styles.playlistCard}>
+          <Image
+            source={{
+              uri: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            }} // Add your playlist image URL
+            style={styles.playlistImage}
+          />
+          <View style={styles.playlistDetails}>
+            <Text style={styles.playlistTitle}>My Playlist - Awareness</Text>
+            <Text style={styles.playlistSessions}>No of Sessions: 150</Text>
+          </View>
+          <TouchableOpacity style={styles.arrowButton}>
+            <Text style={styles.arrowText}>{">"}</Text>
+          </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.arrowButton}>
-          <Text style={styles.arrowText}>{">"}</Text>
-        </TouchableOpacity>
-      </View>
+      ))}
+
       {/* <CategorySelector
         categories={categorySelectorStrings}
         selected={category}
@@ -95,11 +99,11 @@ const YourLibraryScreen = () => {
           <ErrorCard onPressAction={refetch} />
         </View>
       )}
-      {!isLoading &&
+      {/* {!isLoading &&
         !isError &&
         filterData(data, category, searchText).map((item) => (
           <ContentCard key={item.id} item={item} />
-        ))}
+        ))} */}
       <BottomPadding />
     </ScrollView>
   );
