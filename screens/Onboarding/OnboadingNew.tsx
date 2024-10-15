@@ -12,7 +12,6 @@ import {
 
 // Get the device width
 const { width } = Dimensions.get("window");
-import StepOne from "../../assets/images/step1.png";
 export default function CustomOnboarding({ navigation }) {
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -24,7 +23,7 @@ export default function CustomOnboarding({ navigation }) {
       id: 1,
       title: "Welcome to Soul Tribe Network",
       description: "Your personal sanctuary for meditation and mindfulness.",
-      image: StepOne,
+      image: require("../../assets/images/step1.png"),
     },
     {
       id: 2,
@@ -94,7 +93,7 @@ export default function CustomOnboarding({ navigation }) {
       >
         <Image
           source={onboardingData[currentStep].image}
-          style={styles.image}
+          style={[styles.image]}
         />
         <View style={styles.textContainer}>
           <Text style={styles.title}>{onboardingData[currentStep].title}</Text>
@@ -139,7 +138,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width,
-    height: 300, // Adjust as necessary
+    height: 419, // Adjust as necessary
     resizeMode: "cover",
   },
   textContainer: {

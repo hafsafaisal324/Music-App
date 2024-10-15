@@ -7,8 +7,7 @@ import ArtistScreen from "../screens/ArtistScreen";
 import HomeScreen from "../screens/HomeScreen";
 import NotificationScreen from "../screens/HomeScreen/NotificationScreen";
 import SettingsScreen from "../screens/SettingScreen/SettingsScreen";
-
-import AllCategoriesScreen from "../screens/AllCategories";
+import AllCategoriesScreen from "../screens/AllCategoriesScreen";
 
 const HomeStack = createNativeStackNavigator();
 export const HomeStackNavigation = () => (
